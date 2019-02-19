@@ -76,18 +76,25 @@ function division(a, b) {
 
 function mathOperation(arg1, arg2, operation) {
     switch(operation) {
-        case addition:
+        case 'addition':
         return addition(arg1, arg2);
-        case subtraction:
+        break;
+        case 'subtraction':
         return subtraction(arg1, arg2);
-        case multiplication:
+        case 'multiplication':
         return multiplication(arg1, arg2);
-        case division:
+        case 'division':
         return division(arg1, arg2);
+        default:
+        return mathOperation(arg1, arg2, prompt('Неправильно указано название операции, пожалуйста, попробуйте указать операцию ещё раз ещё раз')); 
     }
 }
 
-// alert (mathOperation(10, 5, division));
+var arg1 = +prompt('Пожалуйста, введите значение первого аргумента');
+var arg2 = +prompt('Пожалуйста, введите значение второго аргумента');
+var operation = prompt('Пожалуйста, введите названице операции');
+
+alert(mathOperation(arg1, arg2, operation));
 
 /* /Шестое задание */
 
@@ -100,6 +107,6 @@ function power(val, pow) {
     return (val * power(val, (pow-1)));
 }
 
-alert (power(6, 4));
+alert (power(6, 0));
 
 /* /Седьмое задание */
