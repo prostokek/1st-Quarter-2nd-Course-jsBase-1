@@ -91,7 +91,7 @@ function mathOperation(arg1, arg2, operation) {
 
 var arg1 = +prompt('Пожалуйста, введите значение первого аргумента');
 var arg2 = +prompt('Пожалуйста, введите значение второго аргумента');
-var operation = prompt('Пожалуйста, введите названице операции');
+var operation = prompt('Пожалуйста, введите название операции');
 
 alert(mathOperation(arg1, arg2, operation));
 
@@ -117,6 +117,9 @@ function power(val, pow) {
     }
 }
 
-alert(power(+prompt('a'), +prompt('b')));
+var val = +prompt('Пожалуйста, введите основание');
+var pow = +prompt('Пожалуйста, введите показатель [степени]');
+
+alert(pow + '-я степень числа ' + val + ' :' + power(val, pow));
 
 /* /Седьмое задание */
