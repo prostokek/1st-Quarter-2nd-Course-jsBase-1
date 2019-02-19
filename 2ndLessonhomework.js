@@ -100,12 +100,23 @@ alert(mathOperation(arg1, arg2, operation));
 /* Седьмое задание */
 
 function power(val, pow) {
-    if (pow == 1) {
+    if (pow == 0) {
+        if (val === 0) {
+            return 0;
+        } else {
+            return 1;
+        }
+    } else if (pow == 1) {
         return val;
+    } else if (pow > 1) {
+        return (val * power(val, (pow-1)));
+    } else if (pow == - 1) {
+        return 1 / val;
+    } else if (pow < 1) {
+        return ((1 / val) * power(val, (pow+1)));
     }
-    return (val * power(val, (pow-1)));
 }
 
-alert (power(6, 0));
+alert(power(+prompt('a'), +prompt('b')));
 
 /* /Седьмое задание */
