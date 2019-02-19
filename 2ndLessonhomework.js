@@ -78,7 +78,6 @@ function mathOperation(arg1, arg2, operation) {
     switch(operation) {
         case 'addition':
         return addition(arg1, arg2);
-        break;
         case 'subtraction':
         return subtraction(arg1, arg2);
         case 'multiplication':
