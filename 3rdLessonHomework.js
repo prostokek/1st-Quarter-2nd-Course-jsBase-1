@@ -1,64 +1,32 @@
 /* Первое задание */
 
-// var i = 1;
-// var primeNumbers_array = [];
-// // for (var z = 0; z <= 100; z++) {
-// //     primeNumbers_array.push(z);
-// // }
-// // alert(primeNumbers_array);
+function isPrime(num) {
+    if (num <= 1) {
+        return false;
+    }
+    if (num === 2) {
+        return true;
+    }
 
-// while (i < 100) {
-//     i++;
-//     for (var l = 3; l < 100; l++) {
-//         if ( (i % l == 0) && (i != l) ) { // && (i % 2 != 0)
-//             primeNumbers_array.push(i);
-//             break;
-//         }
-//     }
-// }
-// alert(primeNumbers_array + 'hi');
-// console.log(primeNumbers_array);
+    var i = 2;
+    while (i < num) {
 
-// var i = 1;
-// var primeNumbers_array = [];
+        if (num % i === 0) {
+            return false;
+        }
+        i++;
+    }
+    return true;
+}
 
-// for (var z = 0; z <= 100; z++) {
-//     primeNumbers_array.push(z);
-// }
+for (var i = 2; i < 1000; i++) {
+    if (isPrime(i)) {
+        console.log(i);
+    }
+}
 
-// var saveArray = [];
+// Просто нужно было делать не массивом, ха. Перебор неправильно реализовывал.
 
-// while (i < 100) {
-//     i++;
-//     for (var l = 3; l < 100; l++) {
-//         if ( (i % l == 0) && (i != 1) ) {
-//             saveArray.push(primeNumbers_array[i]);
-//             delete primeNumbers_array[primeNumbers_array.indexOf(i)];
-//             if ( (i % l != 0) && (i != 1) ) {
-//                 primeNumbers_array.push(saveArray.indexOf(i));
-//             }
-//             // break;
-//         }
-//     }
-// }
-// alert(primeNumbers_array);
-
-
-// delete primeNumbers_array[primeNumbers_array.indexOf(15)];
-
-
-
-
-
-// var buffer = [];
-// for(var z = 0; z < primeNumbers_array.length; z++) {
-//     if(primeNumbers_array[z] !== undefined) {
-//         buffer.push(primeNumbers_array[z]);
-//     }
-// }
-// alert(buffer);
-
-/* Я не в состоянии сейчас выделять на это задание неизвестное количество часов, жду разбор на лекции */
 
 /* /Первое задание */
 
@@ -88,16 +56,16 @@ alert(countCartPrice(cart));
 
 /* Третье задание */
 
-for(var i = 0; i < 10; alert(i++));
+for (var i = 0; i < 10; alert(i++));
 
 /* /Третье задание */
 
 /* Четвёртое задание */
 
 var str = '';
-for(var i = 1; i <= 20; i++) {
-	str += '*';
-	console.log(str);
+for (var i = 1; i <= 20; i++) {
+    str += '*';
+    console.log(str);
 }
 
 /* /Четвёртое задание */
