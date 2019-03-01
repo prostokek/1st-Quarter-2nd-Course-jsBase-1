@@ -1,4 +1,4 @@
-.board, #board {
+.board_container .board, #board_container #board {
     border: .5px solid black;
     box-sizing: border-box;
     display: grid;
@@ -8,22 +8,22 @@
     height: 560px;
 }
 
-.board .row_odd, .board .row_even, 
-#board .row_odd, #board .row_even{
+.board_container .board .row_odd, .board_container .board .row_even, 
+#board_container #board .row_odd, #board_container #board .row_even{
     display: grid;
     width: 560px;
     height: 70px;
     grid-template-columns: repeat(8, 1fr);
 }
-.board .row_odd div, .board .row_even div, 
-#board .row_odd div, #board .row_even div {
+.board_container .board .row_odd div, .board_container .board .row_even div, 
+#board_container #board .row_odd div, #board_container #board .row_even div {
     border: .5px solid black;
     /* display: table-cell; */
     text-align: center;
     line-height: 70px;
 }
-.board .black,
-#board .black {
+.board_container .board .black,
+#board_container #board .black {
     background: black;
 }
 
@@ -33,7 +33,7 @@
     justify-content: space-around;
     padding-bottom: 10px;
 }
-.nav_digits {
+.board_container .nav_digits, #board_container .nav_digits {
     height: 560px;
     display: flex;
     flex-direction: column;
@@ -42,6 +42,14 @@
     margin-left: 10px;
 }
 
-.board_container {
+.board_container, #board_container {
     display: flex;
+}
+
+.board_container .whiteFigures, #board_container .whiteFigures {
+    color: rgb(199, 199, 199);
+}
+
+.board_container .blackFigures, #board_container .blackFigures {
+    color: rgb(255, 0, 0);
 }
