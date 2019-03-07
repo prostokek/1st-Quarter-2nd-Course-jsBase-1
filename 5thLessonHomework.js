@@ -76,8 +76,6 @@ for (var i = 0; i < $rowCells_even.length; i++) { // Проходим по ка�
 
 // <nav>
 
-// Я не понял, как буквы при помощи кодировки вставлять именно при помощи того, что мы проходили на этом уроке (соответственно, вопрошаю, есть ли такая возможность)
-
 $nav_digits = document.createElement('div');
 $nav_digits.classList.add('nav_digits');
 
@@ -86,6 +84,8 @@ for (var i = 1; i <= 8; i++) {
     $nav_digit.textContent = i;
     $nav_digits.appendChild($nav_digit);
 }
+
+document.getElementById('board_container').appendChild($nav_digits);
 
 document.getElementById('board_container').appendChild($nav_digits);
 
@@ -207,3 +207,5 @@ function buildCatalogue(products) {
 
 // console.log(buildCatalogue(products));
 buildCatalogue(products);
+=======
+
