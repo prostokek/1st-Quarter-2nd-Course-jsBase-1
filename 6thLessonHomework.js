@@ -6,15 +6,17 @@ var cart = [];
 
 function cart_printTotal(cart) { // Функция, которая выводит информацию о наполненности корзины в HTML
     document.getElementById('cart').innerHTML = '';
-    var sum = 0;
-    for (var i = 0; i < cart.length; i++) {
-        sum += cart[i].price * cart[i].quantity;
-    }
-
+    var sum = 0; 
     var count = 0;
     for (var i = 0; i < cart.length; i++) {
+        sum += cart[i].price * cart[i].quantity;
         count += cart[i].quantity;
     }
+
+    // var count = 0;
+    // for (var i = 0; i < cart.length; i++) {
+    //     count += cart[i].quantity;
+    // }
 
     var cart_total = [sum, count];
 
@@ -120,40 +122,5 @@ function handleAddToCart_button() { // Искомая функция ()
         cart_printTotal(cart); // выводим информацию на страницу
     }
 }
-
-// function buildCartList(products) {
-//     // $cart.innerHTML = '';
-
-//             var i;
-//             for (var = i; i < products.length; i++) {
-//                 if (i == )
-//             }
-//             cart.push(products[i]);
-            // for (var i = 0; i < cart.length; i++) {
-            //     if (cart[i] == 'undefined') {
-            //         cart.splice(i, 1);
-            //     }
-            // }
-            // console.log(cart);
-
-            // console.log(cart_printTotal(cart));
-
-    // $cart.innerHTML = cart_printTotal(cart);
-// }
-// function buildCartList_cleaner(cart) {
-//     for (var i = 0; i < cart.length; i++) {
-//         if (cart[i] == 'undefined') {
-//             delete cart[i];
-//         }
-//     }
-//     return(cart);
-// }
-// buildCartList_cleaner(cart);
-// buildCartList(cart);
-
-// console.log(cart_printTotal(cart));
-
-// console.log(cart_printTotal(cart));
-
 
 // /ПЕРВОЕ ЗАДАНИЕ
