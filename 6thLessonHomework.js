@@ -76,6 +76,7 @@ function buildCatalogue(products) { // Функция, выводящая инф
     for (var i = 0; i < products.length; i++) {
         var $productWrap = document.createElement('div');
         $productWrap.classList.add('product_wrap');
+        $productWrap.id = products[i].id;
         $catalogue.appendChild($productWrap);
 
         var $productName = document.createElement('h4');
@@ -95,7 +96,7 @@ function buildCatalogue(products) { // Функция, выводящая инф
 
         var $productAddButton = document.createElement('button');
         $productAddButton.classList.add('product_addButton');
-        $productAddButton.id = products[i].id; // даём кнопкам id, чтобы в последствии понимать, какой продукт добавить в корзину
+        // $productAddButton.id = products[i].id; // даём кнопкам id, чтобы в последствии понимать, какой продукт добавить в корзину
         $productAddButton.textContent = 'Добавить в корзину'; 
         $productWrap.appendChild($productAddButton);
     }
@@ -114,7 +115,10 @@ $catalogue.addEventListener('click', handleAddToCart_button);
 function handleAddToCart_button() { // Искомая функция ()
     if (event.target.tagName === 'BUTTON') { // если нажали на кнопку
 
-        var currentProduct_id = event.target.id; //id текущего продукта - id кнопки, на которую нажимаем
+        // var currentProduct_id = event.target.id; //id текущего продукта - id кнопки, на которую нажимаем
+        // var currentProduct_id = event.currentTarget.id; // 
+
+        var currentProduct_id = event.target.parentNode.id; //id текущего продукта - id кнопки, на которую нажимаем
 
         var currentProduct = products[currentProduct_id]; // текущий продукт - продукт с текущим id
         cart.push(currentProduct); // добавляем этот самый продукт в корзину
@@ -124,3 +128,35 @@ function handleAddToCart_button() { // Искомая функция ()
 }
 
 // /ПЕРВОЕ ЗАДАНИЕ
+
+// ВТОРОЕ ЗАДАНИЕ
+
+$catalogue.addEventListener('click', modalShow);
+
+var $modalContainer = document.getElementById('modal');
+
+var $modalContent = $modalContainer.appendChild(document.createElement('div'));
+$modalContent.classList.add('modalContent');
+
+// $modalContainer.appendChild(document.createElement('div'));
+// var $modalContent = document.getElementById('modal').childNodes[1];
+
+function modalShow() {
+    var currentProduct_id = event.target.parentNode.id; //id текущего продукта
+
+    var currentProductPic = products[currentProduct_id].picture;
+    var currentProductName = products[currentProduct_id].name;
+
+    if (event.target.tagName === 'IMG') {
+        $modalContainer.classList.add('modal_fixed');
+        $modalContent.innerHTML = '<img src=' + '\"' +  currentProductPic  + '\"' + 'alt=\"' + currentProductName + '\">';
+    }
+}
+
+document.body.addEventListener('click', modalHide);
+function modalHide() {
+    if (event.target == $modalContainer) {
+        $modalContainer.classList.remove('modal_fixed');
+        // $modalContainer.innerHTML = '';
+    }
+}
